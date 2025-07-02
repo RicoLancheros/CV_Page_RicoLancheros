@@ -10,7 +10,7 @@ export const personalInfo = {
   
   bio: [
     "Desarrollador Backend Full Stack con experiencia en SURA y más de 15 proyectos autónomos. Especializado en arquitecturas de microservicios, APIs REST escalables y soluciones de Inteligencia Artificial.",
-    "Graduado con honores académicos del CESDE-CONFAMA como Técnico en Desarrollo de Software. Apasionado por el desarrollo de agentes y modelos de Machine Learning en entornos corporativos escalables."
+    "Graduado con honores académicos del CESDE-CONFAMA como Técnico en Desarrollo de Software. Enfocado en implementar IA en proyectos y desarrollar soluciones backend robustas y escalables para entornos corporativos."
   ],
   
   socialLinks: {
@@ -39,7 +39,7 @@ export const educationData = [
   },
   {
     institution: "SENA",
-    degree: "Análisis y Desarrollo de Software",
+    degree: "Tecnólogo en Análisis y Desarrollo de Software",
     location: "Medellín, Antioquia",
     period: "Octubre 2024 - Presente",
     status: "En curso"
@@ -52,7 +52,7 @@ export const experienceData = [
     company: "SURA",
     position: "Aprendiz en Desarrollo de Software",
     location: "Medellín, Antioquia",
-    period: "Enero 2024 - Diciembre 2024",
+    period: "Septiembre 2023 - Diciembre 2024",
     type: "Tiempo Completo",
     achievements: [
       "Participación activa en el equipo de Aplicaciones Base TI en el área de Operación como Aprendiz de Analista",
@@ -129,7 +129,7 @@ export const projectsData = [
   },
   {
     id: 2,
-    title: "LaVaca",
+    title: "LaVaca (Colaborador)",
     description: "Plataforma de ahorro colaborativo que facilita metas financieras grupales. Permite establecer objetivos, hacer seguimiento de aportes, gestionar fechas límite y mantener motivados a los participantes hacia sus metas compartidas.",
     link: "https://github.com/hurtadx/LaVacaReact",
     liveDemo: "https://lavaca.netlify.app/",
