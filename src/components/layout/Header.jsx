@@ -33,14 +33,7 @@ const Header = () => {
           {personalInfo.title}
         </motion.p>
         
-        <motion.p 
-          className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto drop-shadow-md mb-4"
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-        >
-          {personalInfo.tagline}
-        </motion.p>
+
         
         <motion.div 
           className="flex flex-col md:flex-row items-center justify-center gap-4 text-primary-orange"

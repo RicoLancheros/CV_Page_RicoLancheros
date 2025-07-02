@@ -129,20 +129,23 @@ export const projectsData = [
   },
   {
     id: 2,
-    title: "API REST Escalable",
-    description: "Diseño y desarrollo de APIs REST escalables con integración a múltiples bases de datos para proyectos independientes.",
-    icon: "🚀",
-    technologies: ["Java", ".NET", "MySQL", "MongoDB"],
-    category: "Backend",
+    title: "LaVaca",
+    description: "Plataforma de ahorro colaborativo que facilita metas financieras grupales. Permite establecer objetivos, hacer seguimiento de aportes, gestionar fechas límite y mantener motivados a los participantes hacia sus metas compartidas.",
+    link: "https://github.com/hurtadx/LaVacaReact",
+    liveDemo: "https://lavaca.netlify.app/",
+    image: "lavaca.png",
+    technologies: ["React", "Vite", "Java", "Spring Boot", "Supabase"],
+    category: "Colaboración",
     featured: true
   },
   {
     id: 3,
-    title: "Solución de Inteligencia Artificial",
-    description: "Desarrollo de agentes inteligentes y modelos de Machine Learning para automatización de procesos.",
-    icon: "🤖",
-    technologies: ["Python", "Machine Learning", "AI Agents"],
-    category: "AI/ML",
+    title: "AutoInvoicer",
+    description: "Sistema de reconocimiento inteligente de facturas que utiliza la API de Gemini para transcribir automáticamente documentos fiscales en formatos específicos, optimizando el flujo de trabajo contable para empresas. (Proyecto privado, Github de Test antiguo, para más info de este proyecto, contactarme)",
+    link: "https://github.com/RicoLancheros/OCT_SCANNER_SION_TEST",
+    image: "AutoInvoicer.jfif",
+    technologies: ["React 18", "TypeScript", "Material-UI", "Electron", "Redux Toolkit"],
+    category: "IA/Desktop",
     featured: true
   }
 ] 

@@ -1,32 +1,41 @@
 import { motion } from 'framer-motion'
 import { projectsData } from '../../data/personalData'
 import movieReservationImage from '../../assets/images/Movie_Reservation.png'
+import lavacaImage from '../../assets/images/lavaca.png'
+import autoInvoicerImage from '../../assets/images/AutoInvoicer.jfif'
 
 // Mapeo de imágenes
 const projectImages = {
-  'Movie_Reservation.png': movieReservationImage
+  'Movie_Reservation.png': movieReservationImage,
+  'lavaca.png': lavacaImage,
+  'AutoInvoicer.jfif': autoInvoicerImage
 }
 
 const ProjectCard = ({ project, index }) => {
   const handleCardClick = () => {
-    if (project.link) {
+    // Priorizar demo en vivo si existe, sino abrir repositorio
+    if (project.liveDemo) {
+      window.open(project.liveDemo, '_blank')
+    } else if (project.link) {
       window.open(project.link, '_blank')
     }
   }
 
   return (
     <motion.div
-      className={`glass-dark rounded-xl overflow-hidden hover-glow transition-all duration-300 group ${
-        project.link ? 'cursor-pointer' : ''
-      }`}
+      className="glass-dark rounded-xl overflow-hidden hover-glow transition-all duration-300 group"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: index * 0.2 }}
       viewport={{ once: true }}
       whileHover={{ y: -5 }}
-      onClick={handleCardClick}
     >
-      <div className="h-48 bg-primary-gradient-soft flex items-center justify-center text-6xl relative overflow-hidden">
+      <div 
+        className={`h-48 bg-primary-gradient-soft flex items-center justify-center text-6xl relative overflow-hidden ${
+          (project.liveDemo || project.link) ? 'cursor-pointer' : ''
+        }`}
+        onClick={handleCardClick}
+      >
         {project.image ? (
           <img 
             src={projectImages[project.image]} 
@@ -42,14 +51,20 @@ const ProjectCard = ({ project, index }) => {
               ? 'bg-primary-orange/20 text-primary-orange-light' 
               : project.category === 'Full Stack'
               ? 'bg-green-500/20 text-green-400'
+              : project.category === 'Colaboración'
+              ? 'bg-purple-500/20 text-purple-400'
+              : project.category === 'IA/Desktop'
+              ? 'bg-yellow-500/20 text-yellow-400'
               : 'bg-primary-blue/20 text-primary-blue-light'
           }`}>
             {project.category}
           </span>
         </div>
-        {project.link && (
+        {(project.link || project.liveDemo) && (
           <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-            <span className="text-white text-sm font-medium">Ver Proyecto →</span>
+            <span className="text-white text-sm font-medium">
+              {project.liveDemo ? 'Ver Demo →' : 'Ver Proyecto →'}
+            </span>
           </div>
         )}
       </div>
@@ -71,9 +86,30 @@ const ProjectCard = ({ project, index }) => {
             </span>
           ))}
         </div>
-        {project.link && (
-          <div className="text-primary-orange text-sm font-medium">
-            GitHub Repository →
+        {(project.link || project.liveDemo) && (
+          <div className="flex flex-col gap-2">
+            {project.liveDemo && (
+              <div 
+                className="text-green-400 text-sm font-medium cursor-pointer hover:text-green-300 transition-colors"
+                onClick={(e) => {
+                  e.stopPropagation()
+                  window.open(project.liveDemo, '_blank')
+                }}
+              >
+                Demo en Vivo →
+              </div>
+            )}
+            {project.link && (
+              <div 
+                className="text-primary-orange text-sm font-medium cursor-pointer hover:text-primary-orange-light transition-colors"
+                onClick={(e) => {
+                  e.stopPropagation()
+                  window.open(project.link, '_blank')
+                }}
+              >
+                GitHub Repository →
+              </div>
+            )}
           </div>
         )}
       </div>

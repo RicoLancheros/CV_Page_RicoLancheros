@@ -79,10 +79,7 @@ const Contact = () => {
           <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-4">
             Contáctame
           </h2>
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-            Estoy siempre abierto a nuevas oportunidades en desarrollo backend, 
-            microservicios e inteligencia artificial. ¡Conversemos sobre tu próximo proyecto!
-          </p>
+
         </motion.div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
